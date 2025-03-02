@@ -1,0 +1,107 @@
+$primary-color: #128C7E;
+$secondary-color: #25D366;
+$text-color: #FFFFFF;
+$dropdown-bg-color: #ffffff;
+$dropdown-hover-bg-color: #f7f7f7;
+$dropdown-border-color: rgba(0, 0, 0, 0.1);
+$dropdown-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: $primary-color;
+  color: $text-color;
+
+  .navbar-left {
+    .navbar-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+  }
+
+  .navbar-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .search-input {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #d4d4d4;
+      border-radius: 20px;
+      background-color: #f0f0f0;
+      outline: none;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: $secondary-color;
+      }
+
+      &::placeholder {
+        color: #999;
+      }
+    }
+  }
+
+  .navbar-right {
+    position: relative;
+
+    .profile-pic {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .profile-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: $dropdown-bg-color;
+      border-radius: 10px;
+      box-shadow: $dropdown-shadow;
+      width: 220px;
+      padding: 0.5rem 0;
+      z-index: 10;
+      border: 1px solid $dropdown-border-color;
+
+      .dropdown-item {
+        display: flex;
+        align-items: center;
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        color: $primary-color;
+        text-decoration: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        border-radius: 8px;
+
+        &:hover {
+          background-color: $dropdown-hover-bg-color;
+          transform: translateX(5px);
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 0.5rem;
+        }
+
+        svg {
+          margin-right: 0.8rem;
+        }
+      }
+    }
+  }
+}

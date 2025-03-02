@@ -1,0 +1,173 @@
+
+$primary-color: #075e54;  // WhatsApp dark green
+$secondary-color: #128c7e;  // WhatsApp teal
+$background-color: #e5ddd5;  // Light beige for background
+$white-color: #ffffff;  // White for text and background
+$gray-color: #b2b2b2;  // Gray for placeholders and text
+$error-color: #f44336;  // Red for error messages
+$button-hover-color: #0f6d5f;  // Darker shade of secondary color
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $background-color;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register-box {
+  background-color: $white-color;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+
+  .title {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+    position: relative;
+
+    label {
+      display: block;
+      font-size: 1rem;
+      color: $primary-color;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 90%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      color: $primary-color;
+      background-color: $background-color;
+      transition: border-color 0.3s ease;
+      
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+
+      &.error {
+        border-color: $error-color;
+      }
+    }
+
+    .profile-preview {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .password-criteria {
+      list-style: none;
+      padding: 0;
+      font-size: 0.9rem;
+      margin-top: 5px;
+
+      li {
+        color: $gray-color;
+        padding-left: 20px;
+        position: relative;
+
+        &.valid {
+          color: #4CAF50;
+        }
+
+        &.invalid {
+          color: $error-color;
+        }
+
+        &::before {
+          content: "🔹";
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+
+    .password-error {
+      font-size: 0.9rem;
+      color: $error-color;
+      margin-top: 5px;
+    }
+  }
+
+  .register-button {
+    width: 100%;
+    padding: 14px;
+    background-color: $secondary-color;
+    color: $white-color;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+  }
+
+  .login-link {
+    margin-top: 15px;
+
+    p {
+      font-size: 0.9rem;
+      color: $primary-color;
+    }
+
+    .login-link-text {
+      color: $secondary-color;
+      text-decoration: none;
+      font-weight: bold;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .register-box {
+    padding: 15px;
+
+    .title {
+      font-size: 1.6rem;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+
+      input {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+
+      .password-criteria {
+        font-size: 0.8rem;
+      }
+
+      .password-error {
+        font-size: 0.8rem;
+      }
+    }
+
+    .register-button {
+      padding: 12px;
+      font-size: 1rem;
+    }
+  }
+}
