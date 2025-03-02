@@ -9,7 +9,7 @@ const Nav = ({ profile, setName }) => {
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
   const handleLogout = () => {
-    localStorage.removeItem("authToken");
+    localStorage.removeItem("token");
     navigate('/login')
   };
 
