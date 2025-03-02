@@ -10,6 +10,7 @@ const Nav = ({ profile, setName }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    location.reload()
     navigate('/login')
   };
 
