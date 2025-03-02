@@ -79,7 +79,6 @@ const Profile = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    location.reload()
     navigate("/login");
   };
 
