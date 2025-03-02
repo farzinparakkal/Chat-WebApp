@@ -1,4 +1,4 @@
-const api = "http://localhost:3002/api";
+const api = "https://chat-webapp-backend-899d.onrender.com/api";
 
 export default api;
 
